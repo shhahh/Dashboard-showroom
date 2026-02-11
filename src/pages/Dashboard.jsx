@@ -11,6 +11,7 @@ import { AnimatePresence } from 'framer-motion';
 import Sidebar from '../components/Sidebar';
 import StatCard from '../components/StatCard';
 import AddProductModal from '../components/AddProductModal';
+import SalesChart from '../components/SalesChart';
 
 const Dashboard = () => {
   // --- SARE HOOKS (STATES) FUNCTION KE ANDAR HAIN ---
@@ -136,6 +137,9 @@ const Dashboard = () => {
                 <StatCard title="Inventory Value" value={`$${products.reduce((a,c) => a + Number(c.price || 0), 0).toFixed(0)}`} icon={BarChart3} trend="+12%" />
                 <StatCard title="Active Results" value={filteredProducts.length} icon={Target} />
               </div>
+             <div className="mb-8">
+                <SalesChart />
+             </div>
 
               {/* TABLE */}
               <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
